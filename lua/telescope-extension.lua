@@ -41,3 +41,8 @@ vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
 vim.keymap.set('n', 'gss', builtin.git_status, {})
+
+-- extension
+require('telescope').load_extension('toggletasks')
+local extensions = require('telescope').extensions
+vim.keymap.set('n', '<leader>ts', extensions.toggletasks.spawn, { desc = 'toggletasks: spawn' })

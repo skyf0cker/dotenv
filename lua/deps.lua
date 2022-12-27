@@ -31,4 +31,17 @@ require("lazy").setup({
   'nvim-tree/nvim-web-devicons', -- explorer icon
   'nvim-tree/nvim-tree.lua',
   'numToStr/Comment.nvim',
+  'akinsho/toggleterm.nvim',
+  {
+    'jedrzejboczar/toggletasks.nvim',
+    dependences = {
+      'nvim-lua/plenary.nvim',
+      'akinsho/toggleterm.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+  },
+  {
+    "loctvl842/breadcrumb.nvim",
+    dependences = { "nvim-tree/nvim-web-devicons" }
+  },
 })

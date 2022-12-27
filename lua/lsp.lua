@@ -82,3 +82,6 @@ require('lspconfig').sumneko_lua.setup {
 -- autocmd
 vim.cmd [[autocmd BufWritePost *.go lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd BufWritePost *.lua lua vim.lsp.buf.format()]]
+
+-- comments
+require('Comment').setup()

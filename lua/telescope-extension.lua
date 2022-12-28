@@ -45,4 +45,5 @@ vim.keymap.set('n', 'gss', builtin.git_status, {})
 -- extension
 require('telescope').load_extension('toggletasks')
 local extensions = require('telescope').extensions
-vim.keymap.set('n', '<leader>ts', extensions.toggletasks.spawn, { desc = 'toggletasks: spawn' })
+vim.keymap.set('n', '<leader>ts', extensions.toggletasks.select, { desc = 'toggletasks: select' })
+vim.keymap.set('n', '<leader>fs', extensions.toggletasks.spawn, { desc = 'toggletasks: spawn' })

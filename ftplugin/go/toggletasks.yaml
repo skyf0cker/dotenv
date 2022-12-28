@@ -1,0 +1,6 @@
+tasks:
+  - name: Go test current test function
+    cmd: cd `dirname ${file}` && go test -timeout 60000s -run `head -n${cursor_line} ${file} | grep -oE "Test[^(]*" | tail -1` -count=1 -v -gcflags=all=-l
+    tags:
+      - go
+      - test

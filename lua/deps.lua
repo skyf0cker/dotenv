@@ -44,4 +44,5 @@ require("lazy").setup({
     "loctvl842/breadcrumb.nvim",
     dependences = { "nvim-tree/nvim-web-devicons" }
   },
+  'lewis6991/gitsigns.nvim',
 })

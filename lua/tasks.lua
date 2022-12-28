@@ -16,8 +16,8 @@ require('toggletasks').setup {
     win_cwd = true, -- vim.fn.getcwd(win)
     lsp_root = true, -- root_dir for first LSP available for the buffer
     dirs = {}, -- explicit list of directories to search or function(win): dirs
-    rtp = false, -- scan directories in &runtimepath
-    rtp_ftplugin = false, -- scan in &rtp by filetype, e.g. ftplugin/c/toggletasks.json
+    rtp = true, -- scan directories in &runtimepath
+    rtp_ftplugin = true, -- scan in &rtp by filetype, e.g. ftplugin/c/toggletasks.json
   },
   tasks = {}, -- list of global tasks or function(win): tasks
   -- this is basically the "Config format" defined using Lua tables
@@ -27,7 +27,7 @@ require('toggletasks').setup {
   },
   -- Defaults used when opening task's terminal (see Terminal:new() in toggleterm/terminal.lua)
   toggleterm = {
-    close_on_exit = false,
+    close_on_exit = true,
     hidden = true,
   },
   -- Configuration of telescope pickers
@@ -62,4 +62,3 @@ require('toggletasks').setup {
     },
   },
 }
-

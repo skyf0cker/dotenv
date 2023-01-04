@@ -10,14 +10,14 @@ vim.wo.number = true
 vim.wo.cursorline = true
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
--- 缩进2个空格等于一个Tab
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
+-- 缩进4个空格等于一个Tab
+vim.o.tabstop = 4
+vim.bo.tabstop = 4
+vim.o.softtabstop = 4
 vim.o.shiftround = true
 -- >> << 时移动长度
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+vim.o.shiftwidth = 4
+vim.bo.shiftwidth = 4
 -- 新行对齐当前行，空格替代tab
 vim.o.expandtab = true
 vim.bo.expandtab = true

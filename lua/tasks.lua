@@ -27,7 +27,7 @@ require('toggletasks').setup {
   },
   -- Defaults used when opening task's terminal (see Terminal:new() in toggleterm/terminal.lua)
   toggleterm = {
-    close_on_exit = true,
+    close_on_exit = false,
     hidden = true,
   },
   -- Configuration of telescope pickers

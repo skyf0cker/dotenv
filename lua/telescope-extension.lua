@@ -1,32 +1,32 @@
 require('telescope').setup {
-  defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
-    layout_strategy = 'center',
-    mappings = {
-      i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
-      }
+    defaults = {
+        -- Default configuration for telescope goes here:
+        -- config_key = value,
+        layout_strategy = 'center',
+        mappings = {
+            i = {
+                -- map actions.which_key to <C-h> (default: <C-/>)
+                -- actions.which_key shows the mappings for your picker,
+                -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+                ["<C-h>"] = "which_key"
+            }
+        },
+        file_ignore_patterns = {
+            "^vendor/"
+        }
     },
-    file_ignore_patterns = {
-      "^vendor/"
-    }
-  },
-  pickers = {
-    find_files = {
-      -- hidden = true,
-    }
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  },
+    pickers = {
+        find_files = {
+            -- hidden = true,
+        }
+        -- Default configuration for builtin pickers goes here:
+        -- picker_name = {
+        --   picker_config_key = value,
+        --   ...
+        -- }
+        -- Now the picker_config_key will be applied every time you call this
+        -- builtin picker
+    },
 }
 
 local builtin = require('telescope.builtin')
@@ -48,3 +48,8 @@ require('telescope').load_extension('toggletasks')
 local extensions = require('telescope').extensions
 vim.keymap.set('n', '<leader>ts', extensions.toggletasks.select, { desc = 'toggletasks: select' })
 vim.keymap.set('n', '<leader>fs', extensions.toggletasks.spawn, { desc = 'toggletasks: spawn' })
+
+-- custom highlight groups
+vim.cmd("highlight TelescopeSelection guifg=#003333 guibg=#66FF66")
+vim.cmd("highlight TelescopeSelectionCaret guifg=#66FF66")
+vim.cmd("highlight TelescopeMatching guifg=#FFFFFF")

@@ -93,10 +93,14 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require 'lspconfig'.jsonls.setup {
     capabilities = capabilities,
 }
-
--- autocmd
 vim.cmd [[autocmd BufWritePost *.go lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd BufWritePost *.lua lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePost *.json lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePost *.sql lua vim.lsp.buf.format()]]
+
+require 'lspconfig'.sqlls.setup {
+    capabilities = capabilities,
+}
 
 -- comments
 require('Comment').setup()

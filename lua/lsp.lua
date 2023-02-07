@@ -1,5 +1,4 @@
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
+-- Mappings. See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
@@ -93,14 +92,14 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require 'lspconfig'.jsonls.setup {
     capabilities = capabilities,
 }
+
 vim.cmd [[autocmd BufWritePost *.go lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd BufWritePost *.lua lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd BufWritePost *.json lua vim.lsp.buf.format()]]
-vim.cmd [[autocmd BufWritePost *.sql lua vim.lsp.buf.format()]]
-
-require 'lspconfig'.sqlls.setup {
-    capabilities = capabilities,
-}
 
 -- comments
 require('Comment').setup()
+
+require 'lspconfig'.clangd.setup {
+    capabilities = capabilities
+}

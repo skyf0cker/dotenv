@@ -44,6 +44,7 @@ local lsp_flags = {
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require('lspconfig').gopls.setup {
     on_attach = on_attach,
@@ -65,7 +66,7 @@ require('lspconfig').sumneko_lua.setup {
     settings = {
         Lua = {
             runtime = {
-                version = 'LuaJIT',
+                version = '5.4',
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
@@ -85,17 +86,31 @@ require('lspconfig').sumneko_lua.setup {
     },
 }
 
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+require 'lspconfig'.pyright.setup {
+    capabilities = capabilities
+}
 
 require 'lspconfig'.jsonls.setup {
     capabilities = capabilities,
 }
 
+require 'lspconfig'.bashls.setup {
+    capabilities = capabilities
+}
+
+require 'lspconfig'.html.setup {
+    capabilities = capabilities,
+}
+
+require 'lspconfig'.sqls.setup {}
+
+require 'lspconfig'.vuels.setup {}
+
 vim.cmd [[autocmd BufWritePost *.go lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd BufWritePost *.lua lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd BufWritePost *.json lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePost *.html lua vim.lsp.buf.format()]]
+vim.cmd [[autocmd BufWritePost *.sql lua vim.lsp.buf.format()]]
 
 -- comments
 require('Comment').setup()

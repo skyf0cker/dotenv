@@ -67,3 +67,5 @@ vim.o.pumheight = 10
 package.path = '/Users/lihao68/.luarocks/share/lua/5.1/?/init.lua;/Users/lihao68/.luarocks/share/lua/5.1/?.lua;'
     .. package.path
 package.cpath = '/Users/lihao68/.luarocks/lib/lua/5.1/?.so;' .. package.cpath
+
+vim.keymap.set('v', '<leader>y', '"+y', { noremap = true })

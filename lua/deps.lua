@@ -70,4 +70,13 @@ require("lazy").setup({
             'nvim-lua/plenary.nvim'
         }
     },
+    "MunifTanjim/nui.nvim",
+    {
+        "jackMort/ChatGPT.nvim",
+        dependences = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    }
 })

@@ -34,7 +34,7 @@ require("lazy").setup({
     'akinsho/toggleterm.nvim',
     {
         'jedrzejboczar/toggletasks.nvim',
-        dependences = {
+        dependencies = {
             'nvim-lua/plenary.nvim',
             'akinsho/toggleterm.nvim',
             'nvim-telescope/telescope.nvim',
@@ -42,7 +42,7 @@ require("lazy").setup({
     },
     {
         "loctvl842/breadcrumb.nvim",
-        dependences = { "nvim-tree/nvim-web-devicons" }
+        dependencies = { "nvim-tree/nvim-web-devicons" }
     },
     'lewis6991/gitsigns.nvim',
     {
@@ -66,14 +66,14 @@ require("lazy").setup({
     },
     {
         'sindrets/diffview.nvim',
-        dependences = {
+        dependencies = {
             'nvim-lua/plenary.nvim'
         }
     },
     "MunifTanjim/nui.nvim",
     {
         "jackMort/ChatGPT.nvim",
-        dependences = {
+        dependencies = {
             "MunifTanjim/nui.nvim",
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope.nvim"

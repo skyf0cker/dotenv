@@ -58,15 +58,12 @@ require('lspconfig').tsserver.setup {
     capabilities = capabilities,
 }
 
-require('lspconfig').sumneko_lua.setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    cmd = { "lua-language-server", "--loglevel=trace", "--logpath=/tmp/lua-language-server" },
+require 'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {
             runtime = {
-                version = '5.4',
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
@@ -76,7 +73,6 @@ require('lspconfig').sumneko_lua.setup {
                 -- Make the server aware of Neovim runtime files
                 library = vim.api.nvim_get_runtime_file("", true),
                 checkThirdParty = false,
-                -- preloadFileSize = 65536,
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
@@ -105,6 +101,8 @@ require 'lspconfig'.html.setup {
 require 'lspconfig'.sqls.setup {}
 
 require 'lspconfig'.vuels.setup {}
+
+require 'lspconfig'.eslint.setup {}
 
 vim.cmd [[autocmd BufWritePost *.go lua vim.lsp.buf.format()]]
 vim.cmd [[autocmd BufWritePost *.lua lua vim.lsp.buf.format()]]
